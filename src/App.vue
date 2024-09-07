@@ -1,31 +1,20 @@
-<script setup>
-import { onMounted, ref, watch } from "vue";
-import ChildComp from "./components/ChildComp.vue";
-
-let count = ref(0);
-let title = "Hello Vue";
-let color = ref("red");
-
-onMounted(() => {
-    console.log("mounted!");
-});
-watch(color, () => {
-    console.log("color!!");
-});
-
-const increaseCount = () => {
-    count.value++;
-};
-</script>
+<script setup></script>
 
 <template>
-    <div>
-        <h1>{{ title }}</h1>
-        <button @click="increaseCount">count++</button>
-        <p>{{ count }}</p>
-        <ChildComp :color="color" bgColor="yellow" />
-        <button @click="color = 'green'">change color</button>
+    <div class="parent">
+        <h1 class="display-1">App</h1>
+        <button class="btn btn-primary">button</button>
     </div>
+    <h1>heading 1</h1>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.parent {
+    h1 {
+        color: red;
+    }
+    button {
+        color: yellow;
+    }
+}
+</style>
